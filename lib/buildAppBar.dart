@@ -15,6 +15,7 @@ class _BuildAppBarState extends State<BuildAppBar> {
       //appbarB.svg 이미지 삽입 예정
       child: AppBar(
         backgroundColor: Colors.green,
+        
         elevation: 0.0,
         title: Text(
           saying + '   by.' + byWho,
