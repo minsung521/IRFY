@@ -8,7 +8,6 @@ class MyHome extends StatefulWidget {
 
 class _HomeState extends State<MyHome> {
   String saying = "너의 값진 말들로 희망을 노래하라";
-  String byWho = "평가원";
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +52,9 @@ class _HomeState extends State<MyHome> {
           // centerTitle: true,
           // shadowColor: const Color(0xffD5E7FF),
           // elevation: 1,
+          decoration: BoxDecoration(
+            
+          ),
           child: Column(
             children: [
               SizedBox(
@@ -80,7 +82,7 @@ class _HomeState extends State<MyHome> {
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 30, 0, 15),
-            child: Text('오늘의 응원',
+            child: Text('오늘의 응원 한마디',
             style : TextStyle(
                   color: Colors.black,
                   fontSize: 22,
@@ -89,6 +91,20 @@ class _HomeState extends State<MyHome> {
               )
             ),
           ), 
+          Card(
+            
+            child: ListTile(
+              title: Text( 
+                '"$saying"',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 30, 0, 15),
             child: Text('당신의 오늘 스트레스 지수',
@@ -111,7 +127,7 @@ class _HomeState extends State<MyHome> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(20, 30, 0, 15),
+            padding: const EdgeInsets.fromLTRB(20, 30, 0, 30),
             child: Text('당신을 위해서 준비했어요',
             style : TextStyle(
                   color: Colors.black,
@@ -122,35 +138,26 @@ class _HomeState extends State<MyHome> {
             ),
           ),  
           CarouselSlider(
-              options: CarouselOptions(height: 400.0),
+              options: CarouselOptions(height: 330.0),
               items: [1,2,3].map((i) {
                 return Builder(
                   builder: (BuildContext context) {
                     return Container(
                       width: MediaQuery.of(context).size.width,
-                      margin: EdgeInsets.symmetric(horizontal: 5.0),
+                      margin: EdgeInsets.symmetric(horizontal: 12.0),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
-                          bottomLeft: const Radius.circular(40),
-                          bottomRight: const Radius.circular(40),
-                          topLeft: const Radius.circular(40),
-                          topRight: const Radius.circular(40),
+                          bottomLeft: const Radius.circular(24),
+                          bottomRight: const Radius.circular(24),
+                          topLeft: const Radius.circular(24),
+                          topRight: const Radius.circular(24),
                         ),
                         boxShadow :[
                           BoxShadow(
-                            color: const Color(0xffD5E7FF),
-                            offset: Offset(0.3, 0.3), //(x,y)
-                            blurRadius: 5,
+                            color: Colors.green,
+                            blurRadius: 0.0,
                           )
                         ],
-                      //   gradient: LinearGradient(
-                      //     begin: Alignment.topLeft,
-                      //     end: Alignment.bottomRight,
-                      //     colors: [
-                      //     const Color(0xffEEF2FF),
-                      //     const Color(0xffB1D9FF) ,
-                      //   ],
-                      // )
                     ),
                       child: Text('text $i', style: TextStyle(fontSize: 16.0),)
                     );
