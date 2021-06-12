@@ -4,16 +4,15 @@ import 'myhome.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({ Key key }) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xffF2F5F8),
-        primarySwatch: Colors.blue, 
-        fontFamily: 'NotoSans',
-        ),
+          scaffoldBackgroundColor: Color(0xffF2F5F8),
+          fontFamily: 'NotoSans',
+          primaryColor: Color(0xff3D73DD)),
       debugShowCheckedModeBanner: false,
       home: MyHome(),
     );

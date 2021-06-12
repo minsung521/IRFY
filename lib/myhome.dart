@@ -6,10 +6,23 @@ class MyHome extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 
+// class Quote {
+//   String saying;
+
+//   Quote(String saying) {
+//     this.saying = saying;
+//   }
+// }
+
+class CarouselElement {
+  String text;
+}
+
 class _HomeState extends State<MyHome> {
   String saying = "너의 값진 말들로 희망을 노래하라";
-  num _current = 0;
+
   final mTitleSize = 22.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -125,30 +138,48 @@ class _HomeState extends State<MyHome> {
               color: const Color(0xff3D73DD),
               elevation: 7,
               child: Container(
-                height: 100,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                height: 140,
+                child: Column(
                   children: [
-                    IconButton(
-                      padding: EdgeInsets.all(0.0),
-                      icon: Image.asset('assets/표정1@3x.png'),
-                      onPressed: () {},
+                    SizedBox(
+                      height: 20,
                     ),
-                    IconButton(
-                      padding: EdgeInsets.all(0.0),
-                      icon: Image.asset('assets/표정2@3x.png'),
-                      onPressed: () {},
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        IconButton(
+                          padding: EdgeInsets.all(0.0),
+                          icon: Image.asset('assets/표정1@3x.png'),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          padding: EdgeInsets.all(0.0),
+                          icon: Image.asset('assets/표정2@3x.png'),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          padding: EdgeInsets.all(0.0),
+                          icon: Image.asset('assets/표정3@3x.png'),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          padding: EdgeInsets.all(0.0),
+                          icon: Image.asset('assets/표정4@3x.png'),
+                          onPressed: () {},
+                        ),
+                      ],
                     ),
-                    IconButton(
-                      padding: EdgeInsets.all(0.0),
-                      icon: Image.asset('assets/표정3@3x.png'),
-                      onPressed: () {},
+                    SizedBox(
+                      height: 16,
                     ),
-                    IconButton(
-                      padding: EdgeInsets.all(0.0),
-                      icon: Image.asset('assets/표정4@3x.png'),
-                      onPressed: () {},
-                    ),
+                    Text(
+                      "선택해주세요",
+                      style: TextStyle(
+                        color: Color(0xffBDDEFF),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -164,46 +195,89 @@ class _HomeState extends State<MyHome> {
                   fontWeight: FontWeight.bold,
                 )),
           ),
-          CarouselSlider(
-            options: CarouselOptions(height:330),
-            // onPageChanged : (i){
-            //   setState(() {
-            //     _current = i;
-            //   });
-            // },
-            
-            items: [1, 2, 3].map((i) {
-              return Builder(
-                builder: (BuildContext context) {
-                  return Container(
-                      // height: 300,
-                      width: MediaQuery.of(context).size.width,
-                      margin: EdgeInsets.symmetric(horizontal: 12.0),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: const Radius.circular(24),
-                          bottomRight: const Radius.circular(24),
-                          topLeft: const Radius.circular(24),
-                          topRight: const Radius.circular(24),
+          Container(
+            color: Color(0xffE9EDF1),
+            height: 360,
+            child: CarouselSlider(
+              options: CarouselOptions(height: 330),
+              // onPageChanged : (i){
+              //   setState(() {
+              //     _current = i;
+              //   });
+              // },
+
+              items: [1, 2, 3].map((i) {
+                return Builder(
+                  builder: (BuildContext context) {
+                    return Container(
+                        width: MediaQuery.of(context).size.width,
+                        margin: EdgeInsets.symmetric(horizontal: 12.0),
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.all(const Radius.circular(24)),
+                          color: const Color(0xffFFFFFF),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.3),
+                              spreadRadius: 2,
+                              blurRadius: 8,
+                              offset: Offset(0, 3),
+                            )
+                          ],
                         ),
-                        color: const Color(0xffFFFFFF),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.3),
-                            spreadRadius: 2,
-                            blurRadius: 8,
-                            offset: Offset(0, 3),
-                          )
-                        ],
-                      ),
-                      child: Text(
-                        'text $i',
-                        style: TextStyle(fontSize: 16.0),
-                      ),
-                    );
-                },
-              );
-            }).toList(),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Text(
+                                "지금 당신을 텐션 업! 해줄 노래 추천",
+                                style: TextStyle(
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image(
+                                image: AssetImage("assets/hangup.jpg"),
+                                width: 160,
+                                height: 160,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "퇴사 ",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                  Text('- Anonymous Artist'),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              width: 200,
+                              child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Color(0xff3D73DD),
+                                    onPrimary: Colors.white,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                  ),
+                                  onPressed: () {},
+                                  child: Text("플레이 리스트 더보기")),
+                            ),
+                          ],
+                        ));
+                  },
+                );
+              }).toList(),
+            ),
           ),
           SizedBox(
             height: 30,
