@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75">
+  <g id="표정4" transform="translate(-300 -456)">
+    <path id="패스_41" data-name="패스 41" d="M37.5,0A37.5,37.5,0,1,1,0,37.5,37.5,37.5,0,0,1,37.5,0Z" transform="translate(300 456)" fill="#265abf"/>
+    <circle id="타원_15" data-name="타원 15" cx="30" cy="30" r="30" transform="translate(308 463)" fill="#7fa6f1"/>
+    <path id="패스_12" data-name="패스 12" d="M149.663,2176l5.986-5.128H170.3l7.359,5.128" transform="translate(174.337 -1668.802)" fill="none" stroke="#265abf" stroke-linecap="round" stroke-width="5"/>
+    <path id="패스_13" data-name="패스 13" d="M2.844,1.97c-.992,0-2.214,12.316,0,12.316a4,4,0,0,0,4-4C6.839,8.077,5.053,1.97,2.844,1.97Z" transform="matrix(0.839, 0.545, -0.545, 0.839, 352.348, 476.273)" fill="#265abf"/>
+    <path id="패스_14" data-name="패스 14" d="M1.244,12.316C.252,12.316-.97,0,1.239,0a4,4,0,0,1,4,4C5.239,6.209,3.453,12.316,1.244,12.316Z" transform="matrix(-0.839, 0.545, -0.545, -0.839, 330.091, 489.126)" fill="#265abf"/>
+  </g>
+</svg>

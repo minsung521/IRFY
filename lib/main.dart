@@ -10,11 +10,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: const Color(0xffF2F5F8),
+        primarySwatch: Colors.blue, 
         fontFamily: 'NotoSans',
         ),
       debugShowCheckedModeBanner: false,
-      title: "IRFY",
       home: MyHome(),
     );
   }

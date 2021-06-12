@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75">
+  <g id="표정1" transform="translate(-39 -455)">
+    <rect id="사각형_15" data-name="사각형 15" width="75" height="75" rx="37.5" transform="translate(39 455)" fill="#265abf"/>
+    <circle id="타원_12" data-name="타원 12" cx="30" cy="30" r="30" transform="translate(47 462)" fill="#7fa6f1"/>
+    <circle id="타원_16" data-name="타원 16" cx="4" cy="4" r="4" transform="translate(60 480)" fill="#265abf"/>
+    <circle id="타원_17" data-name="타원 17" cx="4" cy="4" r="4" transform="translate(86 480)" fill="#265abf"/>
+    <path id="패스_3" data-name="패스 3" d="M66,2170s13.75,11.725,25.661,0" transform="translate(-1.831 -1667)" fill="none" stroke="#265abf" stroke-linecap="round" stroke-width="5"/>
+  </g>
+</svg>
