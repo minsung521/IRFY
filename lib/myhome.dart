@@ -14,10 +14,6 @@ class MyHome extends StatefulWidget {
 //   }
 // }
 
-class CarouselElement {
-  String text;
-}
-
 class _HomeState extends State<MyHome> {
   String saying = "너의 값진 말들로 희망을 노래하라";
 
@@ -87,6 +83,59 @@ class _HomeState extends State<MyHome> {
                     fontWeight: FontWeight.bold,
                     fontSize: 30,
                     letterSpacing: -1,
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(top: 20),
+                  height: 100,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Icon(Icons.settings, color: Colors.grey),
+                        style: ElevatedButton.styleFrom(
+                          shape: CircleBorder(),
+                          padding: EdgeInsets.all(20),
+                          primary: Color(0xffE9EDF1), // <-- Button color
+                          onPrimary: Colors.blue, // <-- Splash color
+                          elevation: 10,
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Icon(Icons.question_answer, color: Colors.grey),
+                        style: ElevatedButton.styleFrom(
+                          shape: CircleBorder(),
+                          padding: EdgeInsets.all(20),
+                          primary: Color(0xffE9EDF1), // <-- Button color
+                          onPrimary: Colors.blue, // <-- Splash color
+                          elevation: 10, // <-- Splash color
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Icon(Icons.help, color: Colors.grey),
+                        style: ElevatedButton.styleFrom(
+                          shape: CircleBorder(),
+                          padding: EdgeInsets.all(20),
+                          primary: Color(0xffE9EDF1), // <-- Button color
+                          onPrimary: Colors.blue, // <-- Splash color
+                          elevation: 10,
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Icon(Icons.share, color: Colors.grey),
+                        style: ElevatedButton.styleFrom(
+                          shape: CircleBorder(),
+                          padding: EdgeInsets.all(20),
+                          primary: Color(0xffE9EDF1), // <-- Button color
+                          onPrimary: Colors.blue, // <-- Splash color
+                          elevation: 10,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -206,84 +255,136 @@ class _HomeState extends State<MyHome> {
               //   });
               // },
 
-              items: [1, 2, 3].map((i) {
+              items: [1, 2].map((i) {
                 return Builder(
                   builder: (BuildContext context) {
                     return Container(
-                        width: MediaQuery.of(context).size.width,
-                        margin: EdgeInsets.symmetric(horizontal: 12.0),
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.all(const Radius.circular(24)),
-                          color: const Color(0xffFFFFFF),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.3),
-                              spreadRadius: 2,
-                              blurRadius: 8,
-                              offset: Offset(0, 3),
-                            )
-                          ],
-                        ),
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(20.0),
-                              child: Text(
-                                "지금 당신을 텐션 업! 해줄 노래 추천",
-                                style: TextStyle(
-                                  fontSize: 14,
+                      width: MediaQuery.of(context).size.width,
+                      margin: EdgeInsets.symmetric(horizontal: 12.0),
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.all(const Radius.circular(24)),
+                        color: const Color(0xffFFFFFF),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.3),
+                            spreadRadius: 2,
+                            blurRadius: 8,
+                            offset: Offset(0, 3),
+                          )
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Text(
+                              "지금 당신을 텐션 업! 해줄 노래 추천",
+                              style: TextStyle(
+                                fontSize: 14,
+                              ),
+                            ),
+                          ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image(
+                              image: AssetImage("assets/hangup.jpg"),
+                              width: 160,
+                              height: 160,
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "퇴사 ",
+                                  style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
-                              ),
+                                Text('- Anonymous Artist'),
+                              ],
                             ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image(
-                                image: AssetImage("assets/hangup.jpg"),
-                                width: 160,
-                                height: 160,
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "퇴사 ",
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            width: 200,
+                            child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  primary: Color(0xff3D73DD),
+                                  onPrimary: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  Text('- Anonymous Artist'),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              width: 200,
-                              child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    primary: Color(0xff3D73DD),
-                                    onPrimary: Colors.white,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                  ),
-                                  onPressed: () {},
-                                  child: Text("플레이 리스트 더보기")),
-                            ),
-                          ],
-                        ));
+                                ),
+                                onPressed: () {},
+                                child: Text("플레이 리스트 더보기")),
+                          ),
+                        ],
+                      ),
+                    );
                   },
                 );
               }).toList(),
             ),
           ),
           SizedBox(
-            height: 30,
+            height: 20,
           ),
         ],
       ),
     );
   }
 }
+
+
+
+// Column(
+//                           children: [
+//                             Padding(
+//                               padding: const EdgeInsets.all(20.0),
+//                               child: Text(
+//                                 "지금 당신을 텐션 업! 해줄 노래 추천",
+//                                 style: TextStyle(
+//                                   fontSize: 14,
+//                                 ),
+//                               ),
+//                             ),
+//                             ClipRRect(
+//                               borderRadius: BorderRadius.circular(20),
+//                               child: Image(
+//                                 image: AssetImage("assets/hangup.jpg"),
+//                                 width: 160,
+//                                 height: 160,
+//                                 fit: BoxFit.fill,
+//                               ),
+//                             ),
+//                             Padding(
+//                               padding: const EdgeInsets.all(10.0),
+//                               child: Row(
+//                                 mainAxisAlignment: MainAxisAlignment.center,
+//                                 children: [
+//                                   Text(
+//                                     "퇴사 ",
+//                                     style:
+//                                         TextStyle(fontWeight: FontWeight.bold),
+//                                   ),
+//                                   Text('- Anonymous Artist'),
+//                                 ],
+//                               ),
+//                             ),
+//                             SizedBox(
+//                               width: 200,
+//                               child: ElevatedButton(
+//                                   style: ElevatedButton.styleFrom(
+//                                     primary: Color(0xff3D73DD),
+//                                     onPrimary: Colors.white,
+//                                     shape: RoundedRectangleBorder(
+//                                       borderRadius: BorderRadius.circular(8.0),
+//                                     ),
+//                                   ),
+//                                   onPressed: () {},
+//                                   child: Text("플레이 리스트 더보기")),
+//                             ),
+//                           ],
+//                         )
