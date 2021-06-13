@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'myhome.dart';
+import 'home/myhome.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
           scaffoldBackgroundColor: Color(0xffF2F5F8),
-          fontFamily: 'NotoSans',
+          fontFamily: 'NotoSans CJK KR',
           primaryColor: Color(0xff3D73DD)),
       debugShowCheckedModeBanner: false,
       home: MyHome(),

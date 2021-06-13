@@ -31,6 +31,7 @@ dependencies:
   carousel_slider: ^3.0.0
   google_fonts: ^2.1.0
   flutter_swiper: ^1.1.6
+  webview_flutter: ^0.3.19+9
 
 dev_dependencies:
   flutter_test:
@@ -73,10 +74,10 @@ flutter:
     #     fonts:
     #       - asset: fonts/TrajanPro.ttf
     #       - asset: fonts/TrajanPro_Bold.ttf
-    - family: NotoSans
+    - family: NotoSans CJK KR
       fonts:
-        - asset: assets/fonts/NotoSans-Regular.ttf
-        - asset: assets/fonts/NotoSans-Bold.ttf
+        - asset: assets/fonts/NotoSansCJKkr-Bold.ttf
+        - asset: assets/fonts/NotoSansCJKkr-Regular.ttf
           weight: 700
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
