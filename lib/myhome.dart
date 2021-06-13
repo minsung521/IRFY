@@ -1,18 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
+class CarouselE {
+  String title;
+  String imageName;
+  String explanation;
+  String name;
+  String btnText;
+
+  CarouselE(
+    String title,
+    String imageName,
+    String explanation,
+    String name,
+    String btnText,
+  ) {
+    this.title = title;
+    this.imageName = imageName;
+    this.explanation = explanation;
+    this.name = name;
+    this.btnText = btnText;
+  }
+}
+
+List<CarouselE> ElementsList = [
+  CarouselE("지친 당신을 텐션업! 해줄 노래 추천", "hangup.jpg", "Anonymous Artist", "퇴사",
+      "플레이 리스트 더보기"),
+  CarouselE(
+      "야 너네 직장두? 야 우리 직장두!", "samplewebtoon.jpg", "5화", "부담스러워요", "웹툰 홈 바로가기"),
+];
+
 class MyHome extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
-
-// class Quote {
-//   String saying;
-
-//   Quote(String saying) {
-//     this.saying = saying;
-//   }
-// }
 
 class _HomeState extends State<MyHome> {
   String saying = "너의 값진 말들로 희망을 노래하라";
@@ -22,46 +43,9 @@ class _HomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: PreferredSize(
-      //   child: AppBar(//AppBar 위젯에 appbarB.svg 이미지 삽입
-      //     backgroundColor: Colors.transparent,
-      //     centerTitle: true,
-      //     shadowColor: const Color(0xffD5E7FF),
-      //     elevation: 1,
-      //     title: Column(
-      //       children: [
-      //         SizedBox(
-      //           height: 50,
-      //         ),
-      //         Text(
-      //           "IRFY",
-      //           style:  TextStyle(
-      //               color: Colors.black,
-      //               fontWeight: FontWeight.bold,
-      //               fontSize: 50,
-      //             ),
-      //           textAlign: TextAlign.right,
-      //         ),
-      //         Text(
-      //           "IRFY",
-      //           style:  TextStyle(
-      //               color: Colors.black
-      //             ),
-      //           textAlign: TextAlign.right,
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      //   preferredSize: Size.fromHeight(120.0),
-      // ),
       body: ListView(
-        // padding: EdgeInsets.all(20),
         children: [
           Container(
-            //   backgroundColor: Colors.transparent,
-            // centerTitle: true,
-            // shadowColor: const Color(0xffD5E7FF),
-            // elevation: 1,
             decoration: BoxDecoration(),
             child: Column(
               children: [
@@ -93,7 +77,7 @@ class _HomeState extends State<MyHome> {
                     children: [
                       ElevatedButton(
                         onPressed: () {},
-                        child: Icon(Icons.settings, color: Colors.grey),
+                        child: Icon(Icons.settings, color: Color(0xff757575)),
                         style: ElevatedButton.styleFrom(
                           shape: CircleBorder(),
                           padding: EdgeInsets.all(20),
@@ -104,7 +88,8 @@ class _HomeState extends State<MyHome> {
                       ),
                       ElevatedButton(
                         onPressed: () {},
-                        child: Icon(Icons.question_answer, color: Colors.grey),
+                        child: Icon(Icons.question_answer,
+                            color: Color(0xff757575)),
                         style: ElevatedButton.styleFrom(
                           shape: CircleBorder(),
                           padding: EdgeInsets.all(20),
@@ -115,7 +100,7 @@ class _HomeState extends State<MyHome> {
                       ),
                       ElevatedButton(
                         onPressed: () {},
-                        child: Icon(Icons.help, color: Colors.grey),
+                        child: Icon(Icons.help, color: Color(0xff757575)),
                         style: ElevatedButton.styleFrom(
                           shape: CircleBorder(),
                           padding: EdgeInsets.all(20),
@@ -126,7 +111,7 @@ class _HomeState extends State<MyHome> {
                       ),
                       ElevatedButton(
                         onPressed: () {},
-                        child: Icon(Icons.share, color: Colors.grey),
+                        child: Icon(Icons.share, color: Color(0xff757575)),
                         style: ElevatedButton.styleFrom(
                           shape: CircleBorder(),
                           padding: EdgeInsets.all(20),
@@ -255,7 +240,7 @@ class _HomeState extends State<MyHome> {
               //   });
               // },
 
-              items: [1, 2].map((i) {
+              items: ElementsList.map((elements) {
                 return Builder(
                   builder: (BuildContext context) {
                     return Container(
@@ -279,7 +264,7 @@ class _HomeState extends State<MyHome> {
                           Padding(
                             padding: const EdgeInsets.all(20.0),
                             child: Text(
-                              "지금 당신을 텐션 업! 해줄 노래 추천",
+                              elements.title,
                               style: TextStyle(
                                 fontSize: 14,
                               ),
@@ -288,7 +273,7 @@ class _HomeState extends State<MyHome> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(20),
                             child: Image(
-                              image: AssetImage("assets/hangup.jpg"),
+                              image: AssetImage("assets/${elements.imageName}"),
                               width: 160,
                               height: 160,
                               fit: BoxFit.fill,
@@ -300,10 +285,10 @@ class _HomeState extends State<MyHome> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "퇴사 ",
+                                  elements.name + " - ",
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
-                                Text('- Anonymous Artist'),
+                                Text(elements.explanation)
                               ],
                             ),
                           ),
@@ -319,7 +304,7 @@ class _HomeState extends State<MyHome> {
                               ),
                               onPressed: () {},
                               child: Text(
-                                "플레이 리스트 더보기",
+                                elements.btnText,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -405,55 +390,3 @@ class _HomeState extends State<MyHome> {
     );
   }
 }
-
-
-
-// Column(
-//                           children: [
-//                             Padding(
-//                               padding: const EdgeInsets.all(20.0),
-//                               child: Text(
-//                                 "지금 당신을 텐션 업! 해줄 노래 추천",
-//                                 style: TextStyle(
-//                                   fontSize: 14,
-//                                 ),
-//                               ),
-//                             ),
-//                             ClipRRect(
-//                               borderRadius: BorderRadius.circular(20),
-//                               child: Image(
-//                                 image: AssetImage("assets/hangup.jpg"),
-//                                 width: 160,
-//                                 height: 160,
-//                                 fit: BoxFit.fill,
-//                               ),
-//                             ),
-//                             Padding(
-//                               padding: const EdgeInsets.all(10.0),
-//                               child: Row(
-//                                 mainAxisAlignment: MainAxisAlignment.center,
-//                                 children: [
-//                                   Text(
-//                                     "퇴사 ",
-//                                     style:
-//                                         TextStyle(fontWeight: FontWeight.bold),
-//                                   ),
-//                                   Text('- Anonymous Artist'),
-//                                 ],
-//                               ),
-//                             ),
-//                             SizedBox(
-//                               width: 200,
-//                               child: ElevatedButton(
-//                                   style: ElevatedButton.styleFrom(
-//                                     primary: Color(0xff3D73DD),
-//                                     onPrimary: Colors.white,
-//                                     shape: RoundedRectangleBorder(
-//                                       borderRadius: BorderRadius.circular(8.0),
-//                                     ),
-//                                   ),
-//                                   onPressed: () {},
-//                                   child: Text("플레이 리스트 더보기")),
-//                             ),
-//                           ],
-//                         )
