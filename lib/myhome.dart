@@ -310,15 +310,21 @@ class _HomeState extends State<MyHome> {
                           SizedBox(
                             width: 200,
                             child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  primary: Color(0xff3D73DD),
-                                  onPrimary: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
+                              style: ElevatedButton.styleFrom(
+                                primary: Color(0xff3D73DD),
+                                onPrimary: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                onPressed: () {},
-                                child: Text("플레이 리스트 더보기")),
+                              ),
+                              onPressed: () {},
+                              child: Text(
+                                "플레이 리스트 더보기",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
                           ),
                         ],
                       ),
@@ -330,6 +336,69 @@ class _HomeState extends State<MyHome> {
           ),
           SizedBox(
             height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 30, 0, 15),
+            child: Text('모여봐요 직장인들의 숲',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: mTitleSize,
+                  letterSpacing: -1,
+                  fontWeight: FontWeight.bold,
+                )),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Card(
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              elevation: 7,
+              child: Container(
+                height: 300,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      height: 200,
+                      width: 310,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.0),
+                        color: Color(0xffE9EDF1),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    SizedBox(
+                      width: 310,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Color(0xff3D73DD),
+                          onPrimary: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        onPressed: () {},
+                        child: Text(
+                          "직장인 커뮤티니 바로가기",
+                          style: TextStyle(
+                            fontSize: 18,
+                            letterSpacing: -1,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
         ],
       ),
