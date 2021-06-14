@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:irfy_app/community/comunity.dart';
 import 'howyoufeeltoday.dart';
 import 'navigation_buttons.dart';
 import 'title.dart';
@@ -48,10 +49,23 @@ String saying = "너의 값진 말들로 희망을 노래하라";
 class MyHome extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
+
+  static _HomeState of(BuildContext context) =>
+      context.findAncestorStateOfType<_HomeState>();
 }
 
 class _HomeState extends State<MyHome> {
+  void initState() {
+    super.initState();
+  }
+
+  void dispose() {
+    super.dispose();
+  }
+
   final mTitleSize = 22.0;
+
+  num feeling = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -251,7 +265,10 @@ class _HomeState extends State<MyHome> {
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => CommunityWebview()));
+                        },
                         child: Text(
                           "직장인 커뮤티니 바로가기",
                           style: TextStyle(

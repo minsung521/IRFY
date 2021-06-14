@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'myhome.dart';
 
-class HowUFeelToday extends StatelessWidget {
+class HowUFeelToday extends StatefulWidget {
   const HowUFeelToday({
     Key key,
   }) : super(key: key);
 
+  @override
+  _HowUFeelTodayState createState() => _HowUFeelTodayState();
+}
+
+class _HowUFeelTodayState extends State<HowUFeelToday> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,25 +31,81 @@ class HowUFeelToday extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  IconButton(
-                    padding: EdgeInsets.all(0.0),
-                    icon: Image.asset('assets/표정1@3x.png'),
-                    onPressed: () {},
+                  Container(
+                    decoration:
+                        BoxDecoration(shape: BoxShape.circle, boxShadow: [
+                      BoxShadow(
+                        color: Colors.white,
+                        blurRadius:
+                            MyHome.of(context).feeling == 1 ? 15.0 : 0.0,
+                      ),
+                    ]),
+                    child: IconButton(
+                      padding: EdgeInsets.all(0.0),
+                      icon: Image.asset('assets/표정1@3x.png'),
+                      onPressed: () {
+                        setState(() {
+                          MyHome.of(context).feeling = 1;
+                        });
+                      },
+                    ),
                   ),
-                  IconButton(
-                    padding: EdgeInsets.all(0.0),
-                    icon: Image.asset('assets/표정2@3x.png'),
-                    onPressed: () {},
+                  Container(
+                    decoration:
+                        BoxDecoration(shape: BoxShape.circle, boxShadow: [
+                      BoxShadow(
+                        color: Colors.white,
+                        blurRadius:
+                            MyHome.of(context).feeling == 2 ? 15.0 : 0.0,
+                      ),
+                    ]),
+                    child: IconButton(
+                      padding: EdgeInsets.all(0.0),
+                      icon: Image.asset('assets/표정2@3x.png'),
+                      onPressed: () {
+                        setState(() {
+                          MyHome.of(context).feeling = 2;
+                        });
+                      },
+                    ),
                   ),
-                  IconButton(
-                    padding: EdgeInsets.all(0.0),
-                    icon: Image.asset('assets/표정3@3x.png'),
-                    onPressed: () {},
+                  Container(
+                    decoration:
+                        BoxDecoration(shape: BoxShape.circle, boxShadow: [
+                      BoxShadow(
+                        color: Colors.white,
+                        blurRadius:
+                            MyHome.of(context).feeling == 3 ? 15.0 : 0.0,
+                      ),
+                    ]),
+                    child: IconButton(
+                      padding: EdgeInsets.all(0.0),
+                      icon: Image.asset('assets/표정3@3x.png'),
+                      onPressed: () {
+                        setState(() {
+                          MyHome.of(context).feeling = 3;
+                        });
+                      },
+                    ),
                   ),
-                  IconButton(
-                    padding: EdgeInsets.all(0.0),
-                    icon: Image.asset('assets/표정4@3x.png'),
-                    onPressed: () {},
+                  Container(
+                    decoration:
+                        BoxDecoration(shape: BoxShape.circle, boxShadow: [
+                      BoxShadow(
+                        color: Colors.white,
+                        blurRadius:
+                            MyHome.of(context).feeling == 4 ? 15.0 : 0.0,
+                      ),
+                    ]),
+                    child: IconButton(
+                      padding: EdgeInsets.all(0.0),
+                      icon: Image.asset('assets/표정4@3x.png'),
+                      onPressed: () {
+                        setState(() {
+                          MyHome.of(context).feeling = 4;
+                        });
+                      },
+                    ),
                   ),
                 ],
               ),
@@ -51,13 +113,23 @@ class HowUFeelToday extends StatelessWidget {
                 height: 16,
               ),
               Text(
-                "선택해주세요",
+                MyHome.of(context).feeling == 0
+                    ? "선택해주세요"
+                    : MyHome.of(context).feeling == 1
+                        ? "행복"
+                        : MyHome.of(context).feeling == 2
+                            ? "보통"
+                            : MyHome.of(context).feeling == 3
+                                ? "불편"
+                                : MyHome.of(context).feeling == 4
+                                    ? "화남"
+                                    : "ERROR",
                 style: TextStyle(
                   color: Color(0xffBDDEFF),
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),
-              )
+              ),
             ],
           ),
         ),

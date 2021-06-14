@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:irfy_app/aboutIRFY/aboutIRFY.dart';
+import 'package:irfy_app/help/help.dart';
+import 'package:irfy_app/settings/settings.dart';
 
-class NavigationBtns extends StatelessWidget {
+class NavigationBtns extends StatefulWidget {
   const NavigationBtns({
     Key key,
   }) : super(key: key);
 
+  @override
+  _NavigationBtnsState createState() => _NavigationBtnsState();
+}
+
+class _NavigationBtnsState extends State<NavigationBtns> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,7 +22,10 @@ class NavigationBtns extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => Settings()));
+            },
             child: Icon(Icons.settings, color: Color(0xff757575)),
             style: ElevatedButton.styleFrom(
               shape: CircleBorder(),
@@ -25,8 +36,11 @@ class NavigationBtns extends StatelessWidget {
             ),
           ),
           ElevatedButton(
-            onPressed: () {},
-            child: Icon(Icons.question_answer, color: Color(0xff757575)),
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => help()));
+            },
+            child: Icon(Icons.help, color: Color(0xff757575)),
             style: ElevatedButton.styleFrom(
               shape: CircleBorder(),
               padding: EdgeInsets.all(20),
@@ -36,8 +50,11 @@ class NavigationBtns extends StatelessWidget {
             ),
           ),
           ElevatedButton(
-            onPressed: () {},
-            child: Icon(Icons.help, color: Color(0xff757575)),
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => AboutIRFY()));
+            },
+            child: Icon(Icons.info, color: Color(0xff757575)),
             style: ElevatedButton.styleFrom(
               shape: CircleBorder(),
               padding: EdgeInsets.all(20),
@@ -48,7 +65,7 @@ class NavigationBtns extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {},
-            child: Icon(Icons.share, color: Color(0xff757575)),
+            child: Icon(Icons.ios_share, color: Color(0xff757575)),
             style: ElevatedButton.styleFrom(
               shape: CircleBorder(),
               padding: EdgeInsets.all(20),
