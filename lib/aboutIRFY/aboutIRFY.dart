@@ -5,6 +5,16 @@ class AboutIRFY extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Column(
+      children: [
+        Text("This is settings"),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          child: Icon(Icons.info, color: Color(0xff757575)),
+        ),
+      ],
+    );
   }
 }
