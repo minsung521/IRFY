@@ -40,10 +40,14 @@ class _SettingsState extends State<Settings> {
                 ),
                 ListTile(
                   title: Text(
-                    "로그아웃",
+                    "   만든 사람들",
                     style: TextStyle(
                       fontSize: 20,
                     ),
+                  ),
+                  trailing: IconButton(
+                    icon: Icon(Icons.arrow_forward_ios),
+                    onPressed: () {},
                   ),
                 ),
                 Divider(
@@ -51,10 +55,14 @@ class _SettingsState extends State<Settings> {
                 ),
                 ListTile(
                   title: Text(
-                    "로그아웃",
+                    "   사용자 정보 수정",
                     style: TextStyle(
                       fontSize: 20,
                     ),
+                  ),
+                  trailing: IconButton(
+                    icon: Icon(Icons.arrow_forward_ios),
+                    onPressed: () {},
                   ),
                 ),
                 Divider(
@@ -62,10 +70,14 @@ class _SettingsState extends State<Settings> {
                 ),
                 ListTile(
                   title: Text(
-                    "로그아웃",
+                    "   알림",
                     style: TextStyle(
                       fontSize: 20,
                     ),
+                  ),
+                  trailing: IconButton(
+                    icon: Icon(Icons.arrow_forward_ios),
+                    onPressed: () {},
                   ),
                 ),
                 Divider(
@@ -73,10 +85,14 @@ class _SettingsState extends State<Settings> {
                 ),
                 ListTile(
                   title: Text(
-                    "로그아웃",
+                    "   앱 버전",
                     style: TextStyle(
                       fontSize: 20,
                     ),
+                  ),
+                  trailing: IconButton(
+                    icon: Icon(Icons.arrow_forward_ios),
+                    onPressed: () {},
                   ),
                 ),
                 Divider(
@@ -84,10 +100,14 @@ class _SettingsState extends State<Settings> {
                 ),
                 ListTile(
                   title: Text(
-                    "로그아웃",
+                    "   로그아웃",
                     style: TextStyle(
                       fontSize: 20,
                     ),
+                  ),
+                  trailing: IconButton(
+                    icon: Icon(Icons.arrow_forward_ios),
+                    onPressed: () {},
                   ),
                 ),
                 Divider(

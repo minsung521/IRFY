@@ -1,46 +1,71 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:irfy_app/community/comunity.dart';
+import 'package:irfy_app/music/musichome.dart';
+import 'package:irfy_app/webtoon/webtoonhome.dart';
 import 'howyoufeeltoday.dart';
 import 'navigation_buttons.dart';
 import 'title.dart';
 
 class CarouselE {
+  String eType;
   String title;
   String imageName;
   String explanation;
   String name;
   String btnText;
+  Widget targetPg;
+  Function onClick;
 
   CarouselE({
+    @required String eType,
     @required String title,
     @required String imageName,
     @required String explanation,
     @required String name,
     @required String btnText,
+    @required Widget targetPg,
+    @required Function onClick,
   }) {
+    this.eType = eType;
     this.title = title;
     this.imageName = imageName;
     this.explanation = explanation;
     this.name = name;
     this.btnText = btnText;
+    this.targetPg = targetPg;
+    this.onClick = onClick;
   }
 }
 
 List<CarouselE> elementsList = [
   CarouselE(
+    eType: "music",
     title: "지친 당신을 텐션업! 해줄 노래 추천",
     imageName: "hangup.jpg",
     explanation: "Anonymous Artist",
     name: "퇴사",
     btnText: "플레이 리스트 더보기",
+    targetPg: MusicHome(),
+    onClick: (BuildContext context) {
+      Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => MusicHome()),
+      );
+    },
   ),
   CarouselE(
+    eType: "cartoon",
     title: "야 너네 직장두? 야 우리 직장두!",
     imageName: "samplewebtoon.jpg",
     explanation: "부담스러워요",
     name: "5화",
     btnText: "웹툰 홈 바로가기",
+    targetPg: WebtoonHome(),
+    onClick: (context) {
+      Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => WebtoonHome()),
+      );
+    },
   ),
 ];
 
@@ -63,7 +88,7 @@ class _HomeState extends State<MyHome> {
     super.dispose();
   }
 
-  final mTitleSize = 22.0;
+  final mTitleSize = 26.0;
 
   num feeling = 0;
 
@@ -198,7 +223,8 @@ class _HomeState extends State<MyHome> {
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                               ),
-                              onPressed: () {},
+                              onPressed: () => elements
+                                  .onClick(context), //이부분 어떻게 해야할찌 모르겠다.
                               child: Text(
                                 elements.btnText,
                                 style: TextStyle(

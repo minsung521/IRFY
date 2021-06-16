@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:irfy_app/aboutIRFY/aboutIRFY.dart';
-import 'package:irfy_app/help/help.dart';
 import 'package:irfy_app/settings/settings.dart';
 
 class NavigationBtns extends StatefulWidget {
@@ -38,7 +37,7 @@ class _NavigationBtnsState extends State<NavigationBtns> {
           ElevatedButton(
             onPressed: () {
               Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => help()));
+                  .push(MaterialPageRoute(builder: (context) => AboutIRFY()));
             },
             child: Icon(Icons.help, color: Color(0xff757575)),
             style: ElevatedButton.styleFrom(

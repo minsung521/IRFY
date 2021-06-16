@@ -120,9 +120,9 @@ class _HowUFeelTodayState extends State<HowUFeelToday> {
                         : MyHome.of(context).feeling == 2
                             ? "보통"
                             : MyHome.of(context).feeling == 3
-                                ? "불편"
+                                ? "스트레스"
                                 : MyHome.of(context).feeling == 4
-                                    ? "화남"
+                                    ? "스트레스 푹푹"
                                     : "ERROR",
                 style: TextStyle(
                   color: Color(0xffBDDEFF),

@@ -1,0 +1,47 @@
+{
+	"project_info": {
+		"project_number": "858038371534",
+		"project_id": "irfy-601de",
+		"storage_bucket": "irfy-601de.appspot.com"
+	},
+	"client": [
+		{
+			"client_info": {
+				"mobilesdk_app_id": "1:858038371534:android:916d03d12e46295541bc9f",
+				"android_client_info": {
+					"package_name": "com.example.irfy_app"
+				}
+			},
+			"oauth_client": [
+				{
+					"client_id": "858038371534-i7kn5b0g8oa7e69kdjerfgc3c5au1mp1.apps.googleusercontent.com",
+					"client_type": 1,
+					"android_info": {
+						"package_name": "com.example.irfy_app",
+						"certificate_hash": "673bf771a4135006874d7b69fd53b2ac5454b361"
+					}
+				},
+				{
+					"client_id": "858038371534-a4pl6hr3rlgs196vr0m4bk3ve48vm32e.apps.googleusercontent.com",
+					"client_type": 3
+				}
+			],
+			"api_key": [
+				{
+					"current_key": "AIzaSyAhz50GWk1BYkuSHaeOPYxMckC8aX8U0cE"
+				}
+			],
+			"services": {
+				"appinvite_service": {
+					"other_platform_oauth_client": [
+						{
+							"client_id": "858038371534-a4pl6hr3rlgs196vr0m4bk3ve48vm32e.apps.googleusercontent.com",
+							"client_type": 3
+						}
+					]
+				}
+			}
+		}
+	],
+	"configuration_version": "1"
+}
