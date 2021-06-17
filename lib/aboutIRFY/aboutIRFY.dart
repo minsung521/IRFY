@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:irfy_app/home/myhome.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutIRFY extends StatelessWidget {
   const AboutIRFY({Key key}) : super(key: key);
+  final String _facebook = "https://www.facebook.com/IRFY-108460704795469/";
+  final String _instagram = "https://www.instagram.com/irfy_me/";
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +102,11 @@ class AboutIRFY extends StatelessWidget {
                       ),
                       child: IconButton(
                         icon: FaIcon(FontAwesomeIcons.instagram),
-                        onPressed: () {},
+                        onPressed: () async {
+                          await canLaunch(_instagram)
+                              ? await launch(_instagram)
+                              : throw 'Could not launch $_instagram';
+                        },
                       ),
                     ),
                     SizedBox(
@@ -121,7 +128,11 @@ class AboutIRFY extends StatelessWidget {
                       child: IconButton(
                         padding: EdgeInsets.all(4.0),
                         icon: Icon(Icons.facebook),
-                        onPressed: () {},
+                        onPressed: () async {
+                          await canLaunch(_facebook)
+                              ? await launch(_facebook)
+                              : throw 'Could not launch $_facebook';
+                        },
                       ),
                     ),
                   ],
@@ -134,3 +145,4 @@ class AboutIRFY extends StatelessWidget {
     );
   }
 }
+// await launch("", forceWebView: false, forceSafariVC: false);
