@@ -120,7 +120,7 @@ class _HowUFeelTodayState extends State<HowUFeelToday> {
                         : MyHome.of(context).feeling == 2
                             ? "보통"
                             : MyHome.of(context).feeling == 3
-                                ? "스트레스"
+                                ? "스트레스 쌓임"
                                 : MyHome.of(context).feeling == 4
                                     ? "스트레스 푹푹"
                                     : "ERROR",

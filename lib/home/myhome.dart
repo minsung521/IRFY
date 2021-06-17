@@ -223,8 +223,8 @@ class _HomeState extends State<MyHome> {
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                               ),
-                              onPressed: () => elements
-                                  .onClick(context), //이부분 어떻게 해야할찌 모르겠다.
+                              onPressed: () =>
+                                  elements.onClick(context), //fixed
                               child: Text(
                                 elements.btnText,
                                 style: TextStyle(
