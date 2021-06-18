@@ -1,20 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
-class PlayingNow extends StatelessWidget {
-  const PlayingNow({
+class RecommendNow extends StatefulWidget {
+  const RecommendNow({
     Key key,
     @required String nowsong,
     @required String spotifyURL,
+    @required String appleURL,
     @required String nowartist,
   })  : _nowsong = nowsong,
         _nowartist = nowartist,
         spotifyURL = spotifyURL,
+        appleURL = appleURL,
         super(key: key);
 
   final String _nowsong;
   final String _nowartist;
   final String spotifyURL;
+  final String appleURL;
 
+  @override
+  _RecommendNowState createState() => _RecommendNowState();
+}
+
+class _RecommendNowState extends State<RecommendNow> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,7 +34,7 @@ class PlayingNow extends StatelessWidget {
           child: Row(
             children: [
               Text(
-                '재생중인 ',
+                '지금 추천하는 ',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 26,
@@ -78,7 +88,7 @@ class PlayingNow extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            _nowsong,
+                            widget._nowsong,
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 26,
@@ -87,7 +97,7 @@ class PlayingNow extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            _nowartist,
+                            widget._nowartist,
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 16,
@@ -111,7 +121,9 @@ class PlayingNow extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                       ),
-                      onPressed: () => {}, //fixed
+                      onPressed: () async {
+                        await launch(widget.appleURL);
+                      }, //fixed
                       child: Text(
                         'Apple Music에서 재생하기',
                         style: TextStyle(
@@ -127,7 +139,9 @@ class PlayingNow extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                       ),
-                      onPressed: () {}, //fixed
+                      onPressed: () async {
+                        await launch(widget.spotifyURL);
+                      }, //fixed
                       child: Text(
                         'Spotify 에서 재생하기',
                         style: TextStyle(
