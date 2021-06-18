@@ -63,7 +63,32 @@ class _NavigationBtnsState extends State<NavigationBtns> {
             ),
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (_) => AlertDialog(
+                  title: Text('공유기능은 앱 출시 후에!'),
+                  titleTextStyle: TextStyle(
+                    fontSize: 20,
+                    color: Color(0xff3D73DD),
+                  ),
+                  content: Text('IRFY는 IOS/ANDROID 모두 출시 예정입니다'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text(
+                        "네!",
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
             child: Icon(Icons.ios_share, color: Color(0xff757575)),
             style: ElevatedButton.styleFrom(
               shape: CircleBorder(),

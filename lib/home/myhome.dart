@@ -272,7 +272,7 @@ class _HomeState extends State<MyHome> {
                     ),
                     Container(
                       height: 200,
-                      width: 310,
+                      width: 340,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20.0),
                         color: Color(0xffE9EDF1),
@@ -282,7 +282,7 @@ class _HomeState extends State<MyHome> {
                       height: 16,
                     ),
                     SizedBox(
-                      width: 310,
+                      width: 340,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           primary: Color(0xff3D73DD),

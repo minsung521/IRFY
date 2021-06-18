@@ -103,9 +103,7 @@ class AboutIRFY extends StatelessWidget {
                       child: IconButton(
                         icon: FaIcon(FontAwesomeIcons.instagram),
                         onPressed: () async {
-                          await canLaunch(_instagram)
-                              ? await launch(_instagram)
-                              : throw 'Could not launch $_instagram';
+                          await launch(_instagram);
                         },
                       ),
                     ),
@@ -129,9 +127,7 @@ class AboutIRFY extends StatelessWidget {
                         padding: EdgeInsets.all(4.0),
                         icon: Icon(Icons.facebook),
                         onPressed: () async {
-                          await canLaunch(_facebook)
-                              ? await launch(_facebook)
-                              : throw 'Could not launch $_facebook';
+                          await launch(_facebook); //url error should be i
                         },
                       ),
                     ),
