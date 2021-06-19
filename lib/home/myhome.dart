@@ -156,91 +156,7 @@ class _HomeState extends State<MyHome> {
               ),
             ),
           ),
-          Container(
-            color: Color(0xffE9EDF1),
-            height: 360,
-            child: CarouselSlider(
-              options: CarouselOptions(height: 330),
-              items: elementsList.map((elements) {
-                return Builder(
-                  builder: (BuildContext context) {
-                    return Container(
-                      width: MediaQuery.of(context).size.width,
-                      margin: EdgeInsets.symmetric(horizontal: 12.0),
-                      decoration: BoxDecoration(
-                        borderRadius:
-                            BorderRadius.all(const Radius.circular(24)),
-                        color: const Color(0xffFFFFFF),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.3),
-                            spreadRadius: 2,
-                            blurRadius: 8,
-                            offset: Offset(0, 3),
-                          )
-                        ],
-                      ),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: Text(
-                              elements.title,
-                              style: TextStyle(
-                                fontSize: 14,
-                              ),
-                            ),
-                          ),
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image(
-                              image: AssetImage("assets/${elements.imageName}"),
-                              width: 160,
-                              height: 160,
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  elements.name + " - ",
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                Text(elements.explanation)
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 200,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                primary: Color(0xff3D73DD),
-                                onPrimary: Colors.white,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                              ),
-                              onPressed: () =>
-                                  elements.onClick(context), //fixed
-                              child: Text(
-                                elements.btnText,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                );
-              }).toList(),
-            ),
-          ),
+          HorizontalSlider(),
           SizedBox(
             height: 20,
           ),
@@ -311,6 +227,99 @@ class _HomeState extends State<MyHome> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class HorizontalSlider extends StatelessWidget {
+  const HorizontalSlider({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Color(0xffE9EDF1),
+      height: 360,
+      child: CarouselSlider(
+        options: CarouselOptions(height: 330),
+        items: elementsList.map((elements) {
+          return Builder(
+            builder: (BuildContext context) {
+              return Container(
+                width: MediaQuery.of(context).size.width,
+                margin: EdgeInsets.symmetric(horizontal: 12.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(const Radius.circular(24)),
+                  color: const Color(0xffFFFFFF),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.3),
+                      spreadRadius: 2,
+                      blurRadius: 8,
+                      offset: Offset(0, 3),
+                    )
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Text(
+                        elements.title,
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image(
+                        image: AssetImage("assets/${elements.imageName}"),
+                        width: 160,
+                        height: 160,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            elements.name + " - ",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(elements.explanation)
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width: 200,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Color(0xff3D73DD),
+                          onPrimary: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        onPressed: () => elements.onClick(context), //fixed
+                        child: Text(
+                          elements.btnText,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          );
+        }).toList(),
       ),
     );
   }

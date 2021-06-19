@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+// import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class RecommendNow extends StatefulWidget {
   const RecommendNow({
@@ -55,7 +55,7 @@ class _RecommendNowState extends State<RecommendNow> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
           child: Container(
             height: 400,
             width: 400,
@@ -83,7 +83,7 @@ class _RecommendNowState extends State<RecommendNow> {
                     ),
                     SizedBox(width: 10),
                     Padding(
-                      padding: EdgeInsets.all(20),
+                      padding: EdgeInsets.all(12),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -109,6 +109,11 @@ class _RecommendNowState extends State<RecommendNow> {
                       ),
                     ),
                   ],
+                ),
+                Container(
+                  child: SizedBox(
+                    height: 220,
+                  ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
