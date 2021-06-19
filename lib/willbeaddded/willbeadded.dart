@@ -27,7 +27,7 @@ class WillBeAdded extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.grey[500],
                       fontWeight: FontWeight.w900,
-                      fontSize: 55,
+                      fontSize: 50,
                     ),
                   ),
                   Text(
@@ -35,7 +35,7 @@ class WillBeAdded extends StatelessWidget {
                     style: TextStyle(
                       color: Color(0xff3D73DD),
                       fontWeight: FontWeight.w900,
-                      fontSize: 55,
+                      fontSize: 50,
                     ),
                   ),
                   Text(
@@ -43,7 +43,7 @@ class WillBeAdded extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.grey[500],
                       fontWeight: FontWeight.w900,
-                      fontSize: 55,
+                      fontSize: 50,
                     ),
                   ),
                 ],

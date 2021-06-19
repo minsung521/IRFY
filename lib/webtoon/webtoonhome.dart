@@ -39,6 +39,31 @@ class WebtoonHome extends StatelessWidget {
             ],
           ),
           Padding(
+            padding: const EdgeInsets.fromLTRB(20, 30, 0, 5),
+            child: Row(
+              children: [
+                Text(
+                  '야 너네 직장두?',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 26,
+                    letterSpacing: -1,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  " 시리즈",
+                  style: TextStyle(
+                    color: Color(0xff3D73DD),
+                    fontSize: 26,
+                    letterSpacing: -1,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Card(
               color: Color(0xffE9EDF1),
