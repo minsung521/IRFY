@@ -22,7 +22,7 @@ class _HowUFeelTodayState extends State<HowUFeelToday> {
         color: const Color(0xff3D73DD),
         elevation: 7,
         child: Container(
-          height: 140,
+          height: 160,
           child: Column(
             children: [
               SizedBox(
@@ -40,14 +40,17 @@ class _HowUFeelTodayState extends State<HowUFeelToday> {
                             MyHome.of(context).feeling == 1 ? 15.0 : 0.0,
                       ),
                     ]),
-                    child: IconButton(
-                      padding: EdgeInsets.all(0.0),
-                      icon: Image.asset('assets/표정1@3x.png'),
-                      onPressed: () {
-                        setState(() {
-                          MyHome.of(context).feeling = 1;
-                        });
-                      },
+                    child: SizedBox(
+                      child: IconButton(
+                        iconSize: 76,
+                        padding: EdgeInsets.all(0.0),
+                        icon: Image.asset('assets/표정1@3x.png'),
+                        onPressed: () {
+                          setState(() {
+                            MyHome.of(context).feeling = 1;
+                          });
+                        },
+                      ),
                     ),
                   ),
                   Container(
@@ -60,6 +63,7 @@ class _HowUFeelTodayState extends State<HowUFeelToday> {
                       ),
                     ]),
                     child: IconButton(
+                      iconSize: 76,
                       padding: EdgeInsets.all(0.0),
                       icon: Image.asset('assets/표정2@3x.png'),
                       onPressed: () {
@@ -79,6 +83,7 @@ class _HowUFeelTodayState extends State<HowUFeelToday> {
                       ),
                     ]),
                     child: IconButton(
+                      iconSize: 76,
                       padding: EdgeInsets.all(0.0),
                       icon: Image.asset('assets/표정3@3x.png'),
                       onPressed: () {
@@ -98,6 +103,7 @@ class _HowUFeelTodayState extends State<HowUFeelToday> {
                       ),
                     ]),
                     child: IconButton(
+                      iconSize: 76,
                       padding: EdgeInsets.all(0.0),
                       icon: Image.asset('assets/표정4@3x.png'),
                       onPressed: () {

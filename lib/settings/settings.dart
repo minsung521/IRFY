@@ -55,7 +55,7 @@ class _SettingsState extends State<Settings> {
                 ),
                 ListTile(
                   title: Text(
-                    "   사용자 정보 수정",
+                    "   사용자 정보 수정", // 퇴근 시간대 설정, 사용자 이름, 나이,
                     style: TextStyle(
                       fontSize: 20,
                     ),

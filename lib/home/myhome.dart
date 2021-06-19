@@ -82,6 +82,8 @@ class MyHome extends StatefulWidget {
 }
 
 class _HomeState extends State<MyHome> {
+  final mTitleSize = 26.0;
+
   void initState() {
     super.initState();
   }
@@ -90,9 +92,10 @@ class _HomeState extends State<MyHome> {
     super.dispose();
   }
 
-  final mTitleSize = 26.0;
-
-  num feeling = 0;
+  int feeling = 0;
+  int userAge = 30;
+  String userName = "홍길동";
+  String userWorkIn = "서비스직";
 
   @override
   Widget build(BuildContext context) {
@@ -195,12 +198,73 @@ class _HomeState extends State<MyHome> {
                         borderRadius: BorderRadius.circular(20.0),
                         color: Color(0xffE9EDF1),
                       ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Container(
+                              height: 32,
+                              width: 308,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8.0),
+                                color: Color(0xffC8D3DD),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(16, 0, 8, 8),
+                            child: Container(
+                              height: 24,
+                              width: 284,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8.0),
+                                color: Color(0xffC8D3DD),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(16, 0, 8, 8),
+                            child: Container(
+                              height: 24,
+                              width: 180,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8.0),
+                                color: Color(0xffC8D3DD),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(16, 0, 8, 8),
+                            child: Container(
+                              height: 24,
+                              width: 260,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8.0),
+                                color: Color(0xffC8D3DD),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(16, 0, 8, 8),
+                            child: Container(
+                              height: 24,
+                              width: 200,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8.0),
+                                color: Color(0xffC8D3DD),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     SizedBox(
                       height: 16,
                     ),
                     SizedBox(
                       width: 340,
+                      height: 40,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           primary: Color(0xff3D73DD),
@@ -285,7 +349,7 @@ class HorizontalSlider extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -298,7 +362,8 @@ class HorizontalSlider extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 200,
+                      width: 252,
+                      height: 40,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           primary: Color(0xff3D73DD),

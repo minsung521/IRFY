@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:irfy_app/aboutIRFY/aboutIRFY.dart';
 import 'package:irfy_app/settings/settings.dart';
+import 'package:irfy_app/willbeaddded/willbeadded.dart';
 
 class NavigationBtns extends StatefulWidget {
   const NavigationBtns({
@@ -20,6 +21,9 @@ class _NavigationBtnsState extends State<NavigationBtns> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          SizedBox(
+            width: 8,
+          ),
           ElevatedButton(
             onPressed: () {
               Navigator.of(context)
@@ -51,7 +55,7 @@ class _NavigationBtnsState extends State<NavigationBtns> {
           ElevatedButton(
             onPressed: () {
               Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => AboutIRFY()));
+                  .push(MaterialPageRoute(builder: (context) => WillBeAdded()));
             },
             child: Icon(Icons.info, color: Color(0xff757575)),
             style: ElevatedButton.styleFrom(
@@ -97,6 +101,9 @@ class _NavigationBtnsState extends State<NavigationBtns> {
               onPrimary: Colors.blue, // <-- Splash color
               elevation: 10,
             ),
+          ),
+          SizedBox(
+            width: 8,
           ),
         ],
       ),
