@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
             key: ValueKey(MyHome.pageName),
             child: MyHome(),
           ),
-          AuthPage(),
+          if (currentPage == AuthPage.pageName) AuthPage(),
         ],
         onPopPage: (route, result) {
           if (!route.didPop(result)) {
