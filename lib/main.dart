@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:irfy_app/settings/settings.dart';
 import 'package:irfy_app/webtoon/webtoonhome.dart';
 import 'aboutIRFY/aboutIRFY.dart';
+import 'auth/auth_page.dart';
 import 'home/myhome.dart';
 import 'music/musichome.dart';
 
@@ -13,6 +14,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String currentPage = MyHome.pageName;
+
     return MaterialApp(
       initialRoute: '/',
       routes: {
@@ -26,7 +29,22 @@ class MyApp extends StatelessWidget {
           fontFamily: 'NotoSans CJK KR',
           primaryColor: Color(0xff3D73DD)),
       debugShowCheckedModeBanner: false,
-      home: MyHome(),
+      // home: MyHome(),
+      home: Navigator(
+        pages: [
+          MaterialPage(
+            key: ValueKey(MyHome.pageName),
+            child: MyHome(),
+          ),
+          AuthPage(),
+        ],
+        onPopPage: (route, result) {
+          if (!route.didPop(result)) {
+            return false;
+          }
+          return true;
+        },
+      ),
     );
   }
 }

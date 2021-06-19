@@ -72,6 +72,8 @@ List<CarouselE> elementsList = [
 String saying = "너의 값진 말들로 희망을 노래하라";
 
 class MyHome extends StatefulWidget {
+  static final String pageName = "MyHome";
+
   @override
   _HomeState createState() => _HomeState();
 
