@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:irfy_app/provider/feeling_provider.dart';
+import 'package:provider/provider.dart';
 import 'myhome.dart';
 
 class HowUFeelToday extends StatefulWidget {
@@ -13,6 +15,7 @@ class HowUFeelToday extends StatefulWidget {
 class _HowUFeelTodayState extends State<HowUFeelToday> {
   @override
   Widget build(BuildContext context) {
+    final _myFeeling = context.watch<UserFeeling>();
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Card(
@@ -36,8 +39,7 @@ class _HowUFeelTodayState extends State<HowUFeelToday> {
                         BoxDecoration(shape: BoxShape.circle, boxShadow: [
                       BoxShadow(
                         color: Colors.white,
-                        blurRadius:
-                            MyHome.of(context).feeling == 1 ? 15.0 : 0.0,
+                        blurRadius: _myFeeling.level == 1 ? 15.0 : 0.0,
                       ),
                     ]),
                     child: SizedBox(
@@ -47,7 +49,7 @@ class _HowUFeelTodayState extends State<HowUFeelToday> {
                         icon: Image.asset('assets/표정1@3x.png'),
                         onPressed: () {
                           setState(() {
-                            MyHome.of(context).feeling = 1;
+                            _myFeeling.changefeeling(1);
                           });
                         },
                       ),
@@ -58,8 +60,7 @@ class _HowUFeelTodayState extends State<HowUFeelToday> {
                         BoxDecoration(shape: BoxShape.circle, boxShadow: [
                       BoxShadow(
                         color: Colors.white,
-                        blurRadius:
-                            MyHome.of(context).feeling == 2 ? 15.0 : 0.0,
+                        blurRadius: _myFeeling.level == 2 ? 15.0 : 0.0,
                       ),
                     ]),
                     child: IconButton(
@@ -68,7 +69,7 @@ class _HowUFeelTodayState extends State<HowUFeelToday> {
                       icon: Image.asset('assets/표정2@3x.png'),
                       onPressed: () {
                         setState(() {
-                          MyHome.of(context).feeling = 2;
+                          _myFeeling.changefeeling(2);
                         });
                       },
                     ),
@@ -78,8 +79,7 @@ class _HowUFeelTodayState extends State<HowUFeelToday> {
                         BoxDecoration(shape: BoxShape.circle, boxShadow: [
                       BoxShadow(
                         color: Colors.white,
-                        blurRadius:
-                            MyHome.of(context).feeling == 3 ? 15.0 : 0.0,
+                        blurRadius: _myFeeling.level == 3 ? 15.0 : 0.0,
                       ),
                     ]),
                     child: IconButton(
@@ -88,7 +88,7 @@ class _HowUFeelTodayState extends State<HowUFeelToday> {
                       icon: Image.asset('assets/표정3@3x.png'),
                       onPressed: () {
                         setState(() {
-                          MyHome.of(context).feeling = 3;
+                          _myFeeling.changefeeling(3);
                         });
                       },
                     ),
@@ -98,8 +98,7 @@ class _HowUFeelTodayState extends State<HowUFeelToday> {
                         BoxDecoration(shape: BoxShape.circle, boxShadow: [
                       BoxShadow(
                         color: Colors.white,
-                        blurRadius:
-                            MyHome.of(context).feeling == 4 ? 15.0 : 0.0,
+                        blurRadius: _myFeeling.level == 4 ? 15.0 : 0.0,
                       ),
                     ]),
                     child: IconButton(
@@ -108,7 +107,7 @@ class _HowUFeelTodayState extends State<HowUFeelToday> {
                       icon: Image.asset('assets/표정4@3x.png'),
                       onPressed: () {
                         setState(() {
-                          MyHome.of(context).feeling = 4;
+                          _myFeeling.changefeeling(4);
                         });
                       },
                     ),
@@ -119,15 +118,15 @@ class _HowUFeelTodayState extends State<HowUFeelToday> {
                 height: 16,
               ),
               Text(
-                MyHome.of(context).feeling == 0
+                _myFeeling.level == 0
                     ? "선택해주세요"
-                    : MyHome.of(context).feeling == 1
+                    : _myFeeling.level == 1
                         ? "행복"
-                        : MyHome.of(context).feeling == 2
+                        : _myFeeling.level == 2
                             ? "보통"
-                            : MyHome.of(context).feeling == 3
+                            : _myFeeling.level == 3
                                 ? "스트레스 쌓임"
-                                : MyHome.of(context).feeling == 4
+                                : _myFeeling.level == 4
                                     ? "스트레스 푹푹"
                                     : "ERROR",
                 style: TextStyle(

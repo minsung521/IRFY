@@ -1,9 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:irfy_app/provider/feeling_provider.dart';
 import 'package:irfy_app/settings/settings.dart';
 import 'package:irfy_app/webtoon/webtoonhome.dart';
+import 'package:provider/provider.dart';
 import 'aboutIRFY/aboutIRFY.dart';
-// import 'auth/auth_page.dart';
 import 'home/myhome.dart';
 import 'music/musichome.dart';
 
@@ -27,7 +28,10 @@ class MyApp extends StatelessWidget {
           fontFamily: 'NotoSans CJK KR',
           primaryColor: Color(0xff3D73DD)),
       debugShowCheckedModeBanner: false,
-      home: MyHome(),
+      home: ChangeNotifierProvider(
+        create: (BuildContext context) => UserFeeling(),
+        child: MyHome(),
+      ),
       // home: Navigator(
       //   pages: [
       //     MaterialPage(
